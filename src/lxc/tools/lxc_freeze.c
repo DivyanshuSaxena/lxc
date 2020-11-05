@@ -40,6 +40,7 @@ Options :\n\
 
 int main(int argc, char *argv[])
 {
+	printf("Probably starts here?\n");
 	struct lxc_container *c;
 	struct lxc_log log;
 

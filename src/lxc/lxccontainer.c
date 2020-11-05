@@ -507,6 +507,7 @@ WRAP_API(bool, lxcapi_is_running)
 
 static bool do_lxcapi_freeze(struct lxc_container *c)
 {
+	printf("Mapping the lxc_freeze to do_lxcapi\n");
 	lxc_state_t s;
 
 	if (!c || !c->lxc_conf)

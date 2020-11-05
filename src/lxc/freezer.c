@@ -35,6 +35,7 @@ static void notify_state_listeners(const char *name, const char *lxcpath,
 static int do_freeze_thaw(bool freeze, struct lxc_conf *conf, const char *name,
 			  const char *lxcpath)
 {
+	log_debug(0, "Starting the freeze-thaw function\n");
 	call_cleaner(cgroup_exit) struct cgroup_ops *cgroup_ops = NULL;
 	lxc_state_t new_state = freeze ? FROZEN : THAWED;
 	int ret;
@@ -76,6 +77,7 @@ static int do_freeze_thaw(bool freeze, struct lxc_conf *conf, const char *name,
 
 int lxc_freeze(struct lxc_conf *conf, const char *name, const char *lxcpath)
 {
+	log_debug(0, "Reached the freezer implementation code\n");
 	int ret;
 
 	notify_state_listeners(name, lxcpath, FREEZING);
